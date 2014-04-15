@@ -1,0 +1,275 @@
+.header, .footer{
+	margin: auto;
+	background: #b2d5c9;
+}
+.header{
+	height: 40px;
+	.report-table {
+		float: left;
+		margin: 5px 20px;
+		a {
+			margin-left: 5px;
+		}
+	}
+	.header-devise {
+	float: right;
+	padding: 5px;
+	margin-right: 10px;
+	}
+}
+.footer {
+	clear: both;
+	.footer-font {
+		padding: 10px;
+		color: black;
+		font-weight: bold;
+		font-size: 16px;
+		text-align: center;
+	}
+}
+.current-zixun {
+	height: 100px;
+	width: 90%;
+	margin: 10px auto;
+	.user-count {
+		background: #ff6968;
+		width: 20%;
+		margin: 5px;
+		float: left;
+		.user-count-one,.user-name {
+			text-align: center;
+			font-size: 18px;
+		}
+		.user-count-one {
+			font-size: 18px;
+			padding: 10px;
+		}
+		.user-name {
+			margin: 5px;
+		}
+	}
+}
+	.count {
+		background: #fff8dc;
+		width: 20%;
+		float: right;
+		padding: 5px;
+		margin-top: 5px;
+		.count-number, .user-name {
+			text-align: center;
+			font-size: 18px;
+			padding: 5px;
+		}
+		.count-number {
+			font-weight: bold;
+		}
+	}
+.zixun-tool {
+	width: 90%;
+	margin: 10px auto;
+	height: 100px;
+	span{
+		clear: both;
+		width: 100%;
+		float: left;
+		text-align: center;
+		font-size: 22px;
+		padding: 5px 0;
+	}
+	.user-count {
+		background: #ff6968;
+		width: 20%;
+		margin: 5px;
+		float: left;
+		.user-count-one {
+			font-size: 22px;
+			text-align: center;
+			padding: 10px;
+		}
+		.user-name{
+			text-align: center;
+			font-size: 16px;
+			color: white;
+			font-weight: bold;
+		}
+	}
+
+}
+
+//咨询机会添加
+.zixun-form {
+	width: 80%;
+	margin: 10px auto;
+}
+.zixun-form .field {
+	margin: 50px;
+}
+.zixun-form input, .zixun-form textarea, .zixun-form select {
+	float: left;
+}
+.zixun-form label {
+	margin: 0;
+	width: 200px;
+	float: left;
+}
+.zixun-form .action {
+	clear: both;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+.zixun-form .action input, .zixun-form .action .btn-success {
+	float: none;
+	margin-left: 80px;
+	margin-top: 20px;
+}
+.zixun-form .action .btn-success {
+	margin-left: 250px;
+}
+.zixun-form .form {
+	width: 50%;
+	padding: 5px;
+	margin: auto;
+}
+.zixun-form select {
+	width: 220px;
+	height: 26px;
+}
+.zixun-form input {
+}
+.wice-grid-container {
+	font-size: 10px;
+}
+.zixun-index {
+	width: 98%;
+	margin: auto;
+}
+.zixun-index form {
+	margin: 0;
+}
+.zixun-index .btn-primary {
+	float: right;
+	margin: 2px 30px;
+}
+.zixun-index .edit_advisory #advisory_sap {
+	display: none;
+}
+.tool-zixun {
+	height: 275px;
+	border: 1px solid #d9d9d9;
+	margin: 5px 0;
+}
+//devise登录
+.tongji-user {
+	width: 80%;
+	border: 1px solid #d9d9d9;
+	margin: auto;
+	height: 350px;
+	.field {
+		margin: 10px;
+		clear: both;
+		height: 30px;
+		label{
+			float: left;	
+			margin-left: 20px;
+		}
+		input {
+			float: right;
+		}
+	}
+	.remember-me {
+		float: right;
+		margin-right: 170px;
+		input, label {
+			float: left;
+			margin-left: 4px;
+		}
+	}
+	.btn-primary {
+		float: right;
+		clear: both;
+		margin-right: 15px;
+	}
+	.sign-up {
+		clear: both;
+		float: right;
+	}
+	.tongji-form {
+		height: 300px;
+		width: 35%;
+		border: 1px solid #d9d9d9;
+		margin: 15px auto;
+	}
+}
+//报表视图
+.report {
+	border: 1px solid #d9d9d9;
+	h1 {
+		text-align: center;
+		margin: 10px;
+		letter-spacing: 3px;
+	}
+	.report-product {
+		width: 98%;
+		margin: 10px auto;
+		height: 120px;
+		span {
+			width: 100%;
+			clear: both;
+			float: left;
+			text-align: center;
+			font-size: 18px;
+			letter-spacing: 4px;
+		}
+		.report-table {
+			width: 12%;
+			float: left;
+			margin: 5px;
+			background: #FF7F50;
+			.product-number, .product-name {
+				text-align: center;
+				padding: 5px;
+			}
+			.product-number {
+				color: yellow;
+				font-size: 18px;
+			}
+			.product-name {
+				font-size: 16px;
+				color: black;
+			}
+		}
+	}
+}
+.user-advisory, .sap-into {
+	width: 98%;
+	margin: auto;
+}
+tr {
+	background: white;
+}
+tr:nth-child(2n){
+	background: #d9d9d9;
+}
+tr {
+	background-color: expression((this.sectionRowIndex % 2 == 0)? "white" : "#d9d9d9");
+}
+.urgent .odd {
+	background: white;
+}
+.urgent.even {
+	background: #d9d9d9;
+}
+.user-data {
+	border: 1px solid #d9d9d9;
+	height: 40px;
+	margin: 5px;
+	background: #fcf8e3;
+	h4 {
+		float: left;
+		margin-left: 10px;
+	}
+	span {
+		float: right;
+		margin: 10px 30px;
+	}
+}

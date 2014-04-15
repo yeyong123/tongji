@@ -1,0 +1,23 @@
+<div class="header">
+	<div class="report-table">
+		<% if user_signed_in? || admin_signed_in?%>
+			<%= link_to "报表", products_path, class: "btn btn-success"%>
+			<%= link_to "机会概览", root_path, class: "btn btn-primary"%>
+			<% if admin_signed_in? %>
+				<%= link_to "添加用户", new_registration_path(:user), class: "btn" %>
+			<% end %>
+		<% end %>
+	</div>
+	<div class="header-devise">
+		<% if admin_signed_in? %>
+			<%= link_to "退出",destroy_admin_session_path, method: :delete %>
+		<% else %>
+			<% if current_user %>
+				<%= current_user.name %>
+				<%= link_to "注销", destroy_user_session_path, method: :delete %>
+			<% else %>
+				<%= link_to "登录",new_session_path(:user) %>
+			<% end %>
+		<% end %>
+	</div>
+</div>

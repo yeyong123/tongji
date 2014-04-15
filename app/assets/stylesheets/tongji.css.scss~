@@ -1,0 +1,51 @@
+
+
+//咨询机会添加
+.zixun-form {
+	border: 1px solid #d9d9d9;
+	width: 80%;
+	margin: 10px auto;
+}
+.zixun-form .field {
+	margin: 10px;
+}
+.zixun-form input, .zixun-form textarea, .zixun-form select {
+	float: right;
+}
+.zixun-form .action {
+	clear: both;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+.zixun-form .textarea {
+	 border: 1px solid #d9d9d9;
+	 height: 206px;
+}
+.zixun-form .action input, .zixun-form .action .btn-success {
+	float: none;
+	margin-left: 80px;
+	margin-top: 20px;
+}
+.zixun-form .action .btn-success {
+	margin-left: 250px;
+}
+.zixun-form .form {
+	width: 50%;
+}
+.zixun-form select {
+	width: 254px;
+	height: 26px;
+}
+.wice-grid-container {
+	font-size: 10px;
+}
+.zixun-index {
+	width: 98%;
+	margin: auto;
+}
+.tool-zixun {
+	height: 275px;
+	border: 1px solid #d9d9d9;
+	background: #989898;
+	margin: 5px 0;
+}

@@ -1,0 +1,51 @@
+<%= grid(@tasks_grid, allow_showing_all_records: false) do |g|
+	g.after_row do |advi|
+		if advi.content != nil?
+			content_tag(:tr,
+																											content_tag(:td, "地址：#{advi.address},备注：#{advi.content}", colspan: 12))
+		end
+	end
+
+	g.row_attributes do |advi|
+		if advi.content != nil?
+			{ class: 'urgent'}
+		end
+	end
+	g.column name: "时间", attribute: 'time' do |advi|
+		[advi.time, {class: 'get-table'}]
+	end
+	g.column name: "公司名称", attribute: 'company' do |advi|
+		advi.company
+	end
+	g.column name: "电话", attribute: 'telphone' do |advi|
+		advi.telphone
+	end
+	g.column name: "传真", attribute: 'fax' do |advi|
+		advi.fax
+	end
+	g.column name: "手机", attribute: 'mobel_phone' do |advi|
+		advi.mobel_phone
+	end
+	g.column name: "地区", attribute: 'name', model: Province do |advi|
+		advi.province.name
+	end
+	g.column name: "联系人", attribute: 'name' do |advi|
+		advi.name
+	end
+	g.column name: "线索来源", attribute: 'stem' do |advi|
+		advi.stem
+	end
+	g.column name: "机会类型", attribute: 'odd_type' do |advi|
+		advi.odd_type
+	end
+	g.column name: "产品类别", attribute: 'name', model: Product do |advi|
+		advi.product.name
+	end
+	g.column name: "录入人", attribute: "name", model: User do |advi|
+		link_to advi.user.name, advisory_path(advi.user.id)
+	end
+	g.column do |advi|
+		render partial: 'advisories/sap', locals: {advi: advi}
+	end
+end %>
+

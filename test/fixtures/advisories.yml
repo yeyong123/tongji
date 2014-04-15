@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  odd_type: MyString
+  stem: MyString
+  company: MyString
+  name: MyString
+  telphone: MyString
+  mobel_phone: MyString
+  fax: MyString
+  email: MyString
+  address: MyString
+  content: MyString
+  product_id: 1
+  region_id: 1
+
+two:
+  odd_type: MyString
+  stem: MyString
+  company: MyString
+  name: MyString
+  telphone: MyString
+  mobel_phone: MyString
+  fax: MyString
+  email: MyString
+  address: MyString
+  content: MyString
+  product_id: 1
+  region_id: 1

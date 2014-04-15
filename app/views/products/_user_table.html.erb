@@ -1,0 +1,44 @@
+	<div class="tool-zixun">
+		<div class="current-zixun">
+			<% User.all.each do |user| %>
+				<div class="user-count">
+					<div class="user-count-one">
+						<%= link_to user.advisories.today.count, advisory_path(user.id) unless user.advisories.today.count == 0%>
+					</div>
+					<div class="user-name">
+						<%= user.name %>
+					</div>
+				</div>
+			<% end %>
+			<div class="count">
+				<div class="count-number">
+				<%= today.count %>
+			</div>
+				<div class="user-name">
+					当天合计
+				</div>
+			</div>
+		</div>
+		<div class="zixun-tool">
+			<span>本月数据</span>
+			<% User.all.each do |user| %>
+				<div class="user-count">
+					<div class="user-count-one">
+						<%= user.advisories.count %>
+					</div>
+					<div class="user-name">
+						<%= user.name %>
+					</div>
+				</div>
+			<% end %>
+			<div class="count">
+				<div class="count-number">
+					<%= yester_day.count %>
+				</div>
+				<div class="user-name">
+					合计
+				</div>
+			</div>
+		</div>
+	</div>
+

@@ -1,0 +1,65 @@
+<div class="zixun-form">
+	<%= form_for @advisory do |f| %>
+		<div class="form">
+			<div class="field">
+				<%= @user.name %>
+			</div>
+		<div class="field">
+			<%= f.label "咨询时间" %>
+			<%= f.text_field :time, value: Time.now.strftime("%m-%d:%H:%M"),readonly: true%>
+		</div>
+		<div class="field">
+			<%= f.label "机会类型" %>
+			<%= f.select :odd_type, Advisory::ODD_TYPE	%>
+		</div>
+		<div class="field">
+			<%= f.label "线索来源" %>
+			<%= f.select :stem, Advisory::STEM %>
+		</div>
+		<div class="field">
+			<%= f.label "公司名称" %>
+			<%= f.text_field :company %>
+		</div>
+		<div class="field">
+			<%= f.label "联系人" %>
+			<%= f.text_field :name %>
+		</div>
+		<div class="field">
+			<%= f.label "手机" %>
+			<%= f.text_field :mobel_phone %>
+		</div>
+		<div class="field">
+			<%= f.label "固话" %>
+			<%= f.text_field :telphone %>
+		</div>
+		<div class="field">
+			<%= f.label "传真" %>
+			<%= f.text_field :fax %>
+		</div>
+		<div class="field" >
+			<%= f.label "邮箱" %>
+			<%= f.email_field :email %>
+		</div>
+		<div class="field">
+			<%= f.label "公司地址"%>
+			<%= f.text_field :address %>
+		</div>
+		<div class="field">
+			<%= f.label "所在区域" %>
+			<%= collection_select(:advisory,  :province_id, Province.all, :id, :name)%>
+		</div>
+		<div class="field textarea">
+			<%= f.label "备注"%>
+			<%= f.text_area :content,rows: 10, style: "margin-left: 0px; margin-right: 0px; width: 420px;"%>
+		</div>
+		<div class="field">
+			<%= f.label "产品名称"%>
+			<%= collection_select(:advisory, :product_id, Product.all, :id, :name) %>
+		</div>
+		<div class="action">
+			<%= link_to "返回", advisories_path, class: "btn btn-success" %>
+			<%= f.submit "提交", class: 'btn btn-primary btn-larger'%>
+		</div>
+	</div>
+	<% end %>
+</div>

@@ -1,0 +1,13 @@
+<div class="sap-into">
+	<h2>已入库的数据</h2>
+	<table class="table">
+		<% @advisories.order('created_at desc').each do |advi| %>
+			<%= render partial: 'advisories/table', locals: {advi: advi} %>
+			<tr>
+				<td colspan="12"><%= advi.content %></td>
+			</tr>
+		</tr>
+	<% end %>
+</table>
+<%= will_paginate @advisories %>
+</div>

@@ -1,0 +1,31 @@
+<div class="report">
+	<h1>报表视图</h1>
+	<%= render 'user_table' %>
+	<div class="report-product">
+		<span>当天产品咨询数</span>
+		<% Product.all.each do |product| %>
+			<div class="report-table">
+				<div class="product-number">
+					<%= product.advisories.today.count %>
+				</div>
+				<div class="product-name">
+					<%=product.name %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	<div class="report-product">
+		<span>产品咨询数</span>
+		<% Product.all.each do |product| %>
+			<div class="report-table">
+				<div class="product-number">
+					<%= product.advisories.count %>
+				</div>
+				<div class="product-name">
+					<%=product.name %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
+</div>

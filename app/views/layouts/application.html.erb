@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tongji</title>
+		<%= stylesheet_link_tag    "application" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+	</head>
+	<body>
+		<%= render 'layouts/header' %>
+		<% unless notice.nil? && alert.nil? %>
+			<div class="alert">
+				<a href="#" class="close" data-dismiss="alert">&times;</a>
+				<p>
+				<%= notice %>
+				<%= alert %>
+				</p>
+			</div>
+		<% end %>
+		<%= yield %>
+		<%= render 'layouts/footer' %>
+	</body>
+</html>

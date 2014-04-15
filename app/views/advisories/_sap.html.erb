@@ -1,0 +1,8 @@
+<%= form_for advi do |f| %>
+	<% if !advi.sap? %>
+		<%= check_box_tag('advisory[sap]', 1, advi.id)%>
+		<%= f.submit "入库", confirm: "确认入库", class: "btn btn-success btn-mini"%>
+	<% else %>
+		<%= link_to "已入库", sap_path, class: " btn btn-mini" %>
+	<% end %>
+<% end %>

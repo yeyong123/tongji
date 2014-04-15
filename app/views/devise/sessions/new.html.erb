@@ -1,0 +1,19 @@
+<div class="tongji-user">
+	<div class="tongji-form">
+		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			<div class="field"><%= f.label "邮箱:" %>
+				<%= f.email_field :email, autofocus: true %></div>
+
+			<div class="field"><%= f.label "密码:" %>
+				<%= f.password_field :password, autocomplete: "off" %></div>
+
+			<% if devise_mapping.rememberable? -%>
+				<div class="remember-me"><%= f.check_box :remember_me %> <%= f.label "记住我" %></div>
+			<% end -%>
+
+			<div><%= f.submit "登录", class: 'btn btn-primary'%></div>
+		<% end %>
+		<div class="sign-up">
+		</div>
+	</div>
+</div>
