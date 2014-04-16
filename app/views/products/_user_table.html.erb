@@ -2,12 +2,14 @@
 		<div class="current-zixun">
 			<% User.all.each do |user| %>
 				<div class="user-count">
+					<% unless user.advisories.today.count == 0 %>
 					<div class="user-count-one">
-						<%= link_to user.advisories.today.count, advisory_path(user.id) unless user.advisories.today.count == 0%>
+						<%= link_to user.advisories.today.count, advisory_path(user.id)%>
 					</div>
 					<div class="user-name">
 						<%= user.name %>
 					</div>
+				<% end %>
 				</div>
 			<% end %>
 			<div class="count">
@@ -23,12 +25,14 @@
 			<span>本月数据</span>
 			<% User.all.each do |user| %>
 				<div class="user-count">
+					<% unless user.advisories.count == 0 %>
 					<div class="user-count-one">
 						<%= user.advisories.count %>
 					</div>
 					<div class="user-name">
 						<%= user.name %>
 					</div>
+				<% end %>
 				</div>
 			<% end %>
 			<div class="count">

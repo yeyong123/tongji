@@ -33,7 +33,7 @@
 	margin: 10px auto;
 	.user-count {
 		background: #ff6968;
-		width: 20%;
+		width: 15%;
 		margin: 5px;
 		float: left;
 		.user-count-one,.user-name {
@@ -77,8 +77,8 @@
 		padding: 5px 0;
 	}
 	.user-count {
-		background: #ff6968;
-		width: 20%;
+		background: #FF7F50;
+		width: 15%;
 		margin: 5px;
 		float: left;
 		.user-count-one {
@@ -201,6 +201,10 @@
 	}
 }
 //报表视图
+.report-product .product-today {
+			background: #ff6968;
+		}
+
 .report {
 	border: 1px solid #d9d9d9;
 	h1 {
@@ -220,8 +224,8 @@
 			font-size: 18px;
 			letter-spacing: 4px;
 		}
-		.report-table {
-			width: 12%;
+				.report-table {
+			width: 10%;
 			float: left;
 			margin: 5px;
 			background: #FF7F50;

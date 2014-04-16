@@ -2,7 +2,7 @@
 	g.after_row do |advi|
 		if advi.content != nil?
 			content_tag(:tr,
-																											content_tag(:td, "地址：#{advi.address},备注：#{advi.content}", colspan: 12))
+																																							content_tag(:td, "地址：#{advi.address},备注：#{advi.content} ~~~ #{advi.user.name} ~~~", colspan: 12))
 		end
 	end
 
@@ -39,7 +39,7 @@
 		advi.odd_type
 	end
 	g.column name: "产品类别", attribute: 'name', model: Product do |advi|
-		advi.product.name
+		link_to advi.product.name, product_path(advi.product.id)
 	end
 	g.column name: "录入人", attribute: "name", model: User do |advi|
 		link_to advi.user.name, advisory_path(advi.user.id)

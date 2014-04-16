@@ -5,6 +5,9 @@ class ProductsController < ApplicationController
 		@products = Product.all
   end
 
+	 def show
+		 @advisories = @product.advisories.order('created_at desc').paginate(page: params[:page], per_page: 10)
+	 end
   def new
 		@product = Product.new
   end

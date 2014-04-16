@@ -16,10 +16,15 @@
 //= require_tree .
 $(document).ready(function() {
 
-	var font = $('.urgent .edit_advisory .btn-success').val();
-	if ($(this).font == '入库') {
-		this = $(this);
-		this.$('.urgent .get-table').css('background', '#d9d9d9');
-	}
+	var font = $('#advisory_stem').find("option:selected").text();
+	$('#advisory_content').focus(function(){
+		$('#advisory_content').val("(" + font + "): ");
+	});
 
+	$('#advisory_stem').change(function(){
+		var font = $('#advisory_stem').find("option:selected").text();
+		$('#advisory_content').focus(function(){
+			$('#advisory_content').val("(" + font + "): ");
+		});
+	});
 });

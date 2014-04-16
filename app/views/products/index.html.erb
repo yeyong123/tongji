@@ -4,7 +4,7 @@
 	<div class="report-product">
 		<span>当天产品咨询数</span>
 		<% Product.all.each do |product| %>
-			<div class="report-table">
+			<div class="report-table product-today">
 				<div class="product-number">
 					<%= product.advisories.today.count %>
 				</div>

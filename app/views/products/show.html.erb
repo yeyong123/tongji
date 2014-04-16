@@ -1,0 +1,21 @@
+<div class="user-advisory">
+	<table class="table">
+		<div class="show-current-user">
+			<%= link_to "返回", root_path, class: "btn btn-primary" %>
+			<br>
+			<div class="user-data">
+				<h4><%= @product.name %>数据报表</h4>
+				<span>总共<%= @product.advisories.count %>个</span>
+				<span style="color: red;">今日新增加<%= @product.advisories.today.count %>个</span>
+			</div>
+		</div>
+		<% @advisories.each do |advi| %>
+			<%= render partial: "advisories/table", locals: {advi: advi} %>
+		</tr>
+			<tr>
+				<td colspan="10"><%= advi.content %> ~~~ <%= advi.user.name %> ~~~</td>	
+			</tr>
+		<% end %>
+	</table>
+	<%= will_paginate @advisories %>
+</div>
