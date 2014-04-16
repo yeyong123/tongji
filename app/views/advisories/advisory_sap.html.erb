@@ -1,10 +1,16 @@
-<div class="sap-into">
-	<h2>已入库的数据</h2>
+<div class="user-advisory">
 	<table class="table">
+		<div class="show-current-user">
+			<div class="user-data">
+				<h4>已入库的数据</h4>
+				<span>总共<%= Advisory.where("sap=true").count %> 个</span>
+				<span>今日新加<%= Advisory.where("sap=true").today.count %>个</span>
+			</div>
+		</div>
 		<% @advisories.order('created_at desc').each do |advi| %>
 			<%= render partial: 'advisories/table', locals: {advi: advi} %>
 			<tr>
-				<td colspan="12"><%= advi.content %></td>
+				<td colspan="12"><%= advi.content %>  @<%= link_to advi.user.name, advisory_path(advi.user.id) %></td>
 			</tr>
 		</tr>
 	<% end %>

@@ -1,7 +1,8 @@
 <div class="user-advisory">
 	<table class="table">
 		<div class="show-current-user">
-			<%= link_to "返回", root_path, class: "btn btn-primary" %>
+			<%= link_to "返回", root_path, class: "btn btn-danger" %>
+			<%= link_to "新增机会", new_advisory_path, class: "btn btn-primary"%>
 			<br>
 			<div class="user-data">
 				<h4><%= @product.name %>数据报表</h4>
@@ -13,7 +14,7 @@
 			<%= render partial: "advisories/table", locals: {advi: advi} %>
 		</tr>
 			<tr>
-				<td colspan="10"><%= advi.content %> ~~~ <%= advi.user.name %> ~~~</td>	
+				<td colspan="10"><%= advi.content %> @<%= link_to advi.user.name, advisory_path(advi.user.id) %> </td>	
 			</tr>
 		<% end %>
 	</table>

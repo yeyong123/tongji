@@ -2,7 +2,7 @@
 	g.after_row do |advi|
 		if advi.content != nil?
 			content_tag(:tr,
-																																							content_tag(:td, "地址：#{advi.address},备注：#{advi.content} ~~~ #{advi.user.name} ~~~", colspan: 12))
+																																													content_tag(:td, "地址：#{advi.address},备注：#{advi.content}@#{advi.user.name}", colspan: 12))
 		end
 	end
 

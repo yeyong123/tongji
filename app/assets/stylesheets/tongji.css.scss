@@ -1,3 +1,6 @@
+.table td {
+	padding: 5px;
+}
 .header, .footer{
 	margin: auto;
 	background: #b2d5c9;
@@ -7,6 +10,7 @@
 	.report-table {
 		float: left;
 		margin: 5px 20px;
+		background: none;
 		a {
 			margin-left: 5px;
 		}
@@ -204,7 +208,9 @@
 .report-product .product-today {
 			background: #ff6968;
 		}
-
+.report-table {
+	background: #ff7f50;
+}
 .report {
 	border: 1px solid #d9d9d9;
 	h1 {
@@ -224,11 +230,10 @@
 			font-size: 18px;
 			letter-spacing: 4px;
 		}
-				.report-table {
+		.report-table {
 			width: 10%;
 			float: left;
 			margin: 5px;
-			background: #FF7F50;
 			.product-number, .product-name {
 				text-align: center;
 				padding: 5px;
@@ -237,16 +242,27 @@
 				color: yellow;
 				font-size: 18px;
 			}
-			.product-name {
-				font-size: 16px;
-				color: black;
-			}
 		}
 	}
+}
+.product-name {
+	font-size: 16px;
+	color: black;
+}
+.product-name2 {
+	font-size: 14px;
 }
 .user-advisory, .sap-into {
 	width: 98%;
 	margin: auto;
+}
+.show-current-user{
+	.btn-primary {
+		float: right;
+	}
+	.btn-primary,.btn-danger {
+		margin: 5px;
+	}
 }
 tr {
 	background: white;

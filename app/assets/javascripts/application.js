@@ -16,15 +16,11 @@
 //= require_tree .
 $(document).ready(function() {
 
-	var font = $('#advisory_stem').find("option:selected").text();
-	$('#advisory_content').focus(function(){
-		$('#advisory_content').val("(" + font + "): ");
-	});
+	var font = $('#new_advisory #advisory_stem').find("option:selected").text();
+		$('#new_advisory #advisory_content').val("(" + font + "): ");
 
-	$('#advisory_stem').change(function(){
-		var font = $('#advisory_stem').find("option:selected").text();
-		$('#advisory_content').focus(function(){
-			$('#advisory_content').val("(" + font + "): ");
-		});
+	$('#new_advisory #advisory_stem').change(function(){
+		var font = $('#new_advisory #advisory_stem').find("option:selected").text();
+			$('#new_advisory #advisory_content').val("(" + font + "): ");
 	});
 });
