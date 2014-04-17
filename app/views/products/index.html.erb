@@ -1,61 +1,13 @@
 <div class="report">
 	<h1>报表视图</h1>
 	<%= render 'user_table' %>
-	<div class="report-product">
-		<span>当天产品咨询数</span>
-		<% Product.all.each do |product| %>
-			<div class="report-table product-today">
-				<div class="product-number">
-					<%= link_to product.advisories.today.count, product_path(product.id) %>
-				</div>
-				<div class="product-name">
-					<%=product.name %>
-				</div>
-			</div>
-		<% end %>
-	</div>
-	<div class="report-product">
-		<span>产品咨询数</span>
-		<% Product.all.each do |product| %>
-			<div class="report-table">
-				<div class="product-number">
-					<%= product.advisories.count %>
-				</div>
-				<div class="product-name">
-					<%=product.name %>
-				</div>
-			</div>
-		<% end %>
-	</div>
-	<div class="report-product">
-		<span>当天区域报表</span>
-		<% Province.all.each do |pro| %>
-			<% unless pro.advisories.today.count == 0 %>
-				<div class="report-table product-today">
-					<div class="product-number">
-						<%= pro.advisories.today.count%>
-					</div>
-					<div class="product-name product-name2">
-						<%= pro.name %>
-					</div>
-				</div>
-			<% end %>
-		<% end %>
-	</div>
-	<div class="report-product">
-		<span>区域报表</span>
-		<% Province.all.each do |pro| %>
-			<% unless pro.advisories.count == 0 %>
-				<div class="report-table">
-					<div class="product-number">
-						<%= pro.advisories.count%>
-					</div>
-					<div class="product-name product-name2">
-						<%= pro.name %>
-					</div>
-				</div>
-			<% end %>
-		<% end %>
-	</div>
-
+	<hr />
+	<%= render 'products/clue_report' %>
+	<hr />
+	<%= render 'products/kind_report' %>
+	<hr />
+	<%= render 'products/product_report' %>
+	<hr />
+	<%= render 'products/province_report' %>
+	<hr />
 </div>

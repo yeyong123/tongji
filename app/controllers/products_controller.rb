@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
 	def create
 		@product = Product.new(params[:product])
 		if @product.save
-			redirect_to root_path
+			redirect_to :back, notice: "添加成功, 继续添加或返回"
 		else
 			render 'new'
 		end

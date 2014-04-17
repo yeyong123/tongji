@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140414083854) do
+ActiveRecord::Schema.define(:version => 20140417010505) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(:version => 20140414083854) do
     t.integer  "user_id"
     t.integer  "province_id"
     t.boolean  "sap",         :default => false
+    t.integer  "clue_id"
+    t.integer  "kind_id"
   end
 
   create_table "cities", :force => true do |t|
@@ -72,6 +74,12 @@ ActiveRecord::Schema.define(:version => 20140414083854) do
   add_index "cities", ["province_id"], :name => "index_cities_on_province_id"
   add_index "cities", ["zip_code"], :name => "index_cities_on_zip_code"
 
+  create_table "clues", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "districts", :force => true do |t|
     t.string   "name"
     t.integer  "city_id"
@@ -85,6 +93,12 @@ ActiveRecord::Schema.define(:version => 20140414083854) do
   add_index "districts", ["name"], :name => "index_districts_on_name"
   add_index "districts", ["pinyin"], :name => "index_districts_on_pinyin"
   add_index "districts", ["pinyin_abbr"], :name => "index_districts_on_pinyin_abbr"
+
+  create_table "kinds", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "products", :force => true do |t|
     t.string   "name"

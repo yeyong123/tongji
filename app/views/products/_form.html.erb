@@ -1,5 +1,6 @@
+<div class="form-form">
+	<h3>增加产品分类</h3>
 <%= form_for @product do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-	<%= f.submit %>
+	<%= render partial: 'products/form_form', locals: {f: f} %>
 <% end %>
+</div>

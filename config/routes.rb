@@ -8,6 +8,8 @@ Tongji::Application.routes.draw do
 	resources :advisories
 	resources :products
 	resources :regions
+	resources :clues
+	resources :kinds
 	match '/sap', to: 'advisories#advisory_sap'
 	root to: 'advisories#index'
   # The priority is based upon order of creation:

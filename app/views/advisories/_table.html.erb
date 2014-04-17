@@ -6,7 +6,11 @@
 				<td><%= advi.mobel_phone %></td>
 				<td><%= advi.fax %></td>
 				<td><%= advi.province.name %></td>
-				<td><%= advi.product.name %></td>
-				<td><%= advi.odd_type %></td>
-				<td><%= advi.stem %></td>
-			
+				<td><%= link_to advi.product.name,product_path(advi.product.id)%></td>
+				<% unless advi.kind_id.nil? && advi.clue_id.nil? %>
+					<td><%= link_to advi.kind.name, kind_path(advi.kind.id) %></td>
+					<td><%= link_to advi.clue.name, clue_path(advi.clue.id) %></td>
+				<% else%>
+				<td style="color: red"><%= advi.odd_type %></td>
+				<td style="color: red"><%= advi.stem %></td>
+			<% end %>	

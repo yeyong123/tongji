@@ -3,7 +3,7 @@ class AdvisoriesController < ApplicationController
 	before_filter :find_id, only: [:edit, :update,:destroy]
 
 	def index
-		@tasks_grid = initialize_grid(Advisory, include: [:product, :province, :user], order: 'advisories.created_at', order_direction: 'desc',
+		@tasks_grid = initialize_grid(Advisory, include: [:product, :province, :user, :clue, :kind], order: 'advisories.created_at', order_direction: 'desc',
 			per_page:15)
 	end
 
@@ -32,7 +32,7 @@ class AdvisoriesController < ApplicationController
 
 	def update
 		if @advisory.update_attributes(params[:advisory])
-			redirect_to root_path
+			redirect_to advisory_path(@advisory)
 		else
 			render 'edit'
 		end

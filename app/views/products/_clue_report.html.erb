@@ -1,0 +1,30 @@
+<div class="report-product">
+	<span>当天线索报表</span>
+	<% Clue.all.each do |clue| %>
+		<% unless clue.advisories.today.count == 0 %>
+			<div class="report-table product-today">
+				<div class="product-number">
+					<%= clue.advisories.today.count %>
+				</div>
+				<div class="product-name product-name2">
+					<%= clue.name %>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+</div>
+<div class="report-product">
+	<span>线索来源报表</span>
+	<% Clue.all.each do |clue| %>
+		<% unless clue.advisories.count == 0 %>
+			<div class="report-table">
+				<div class="product-number">
+					<%= clue.advisories.count %>
+				</div>
+				<div class="product-name product-name2">
+					<%= clue.name %>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+</div>

@@ -1,0 +1,31 @@
+	<div class="report-product">
+		<span>当天区域报表</span>
+		<% Province.all.each do |pro| %>
+			<% unless pro.advisories.today.count == 0 %>
+				<div class="report-table product-today">
+					<div class="product-number">
+						<%= pro.advisories.today.count%>
+					</div>
+					<div class="product-name product-name2">
+						<%= pro.name %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+	<div class="report-product">
+		<span>区域报表</span>
+		<% Province.all.each do |pro| %>
+			<% unless pro.advisories.count == 0 %>
+				<div class="report-table">
+					<div class="product-number">
+						<%= pro.advisories.count%>
+					</div>
+					<div class="product-name product-name2">
+						<%= pro.name %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+

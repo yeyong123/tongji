@@ -1,5 +1,17 @@
 <div class="zixun-form">
 	<%= form_for @advisory do |f| %>
+		<% if @advisory.errors.any? %>
+			<div id="error_explanation">
+				<div class="alert alert-error">
+					有<%= @user.errors.count %>错误!
+				</div>
+				<ul>
+					<% @advisory.errors.full_messages.each do |msg| %>
+						<li>* <%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
 		<div class="form">
 			<div class="field">
 				<%= @user.name %>
@@ -10,11 +22,11 @@
 		</div>
 		<div class="field">
 			<%= f.label "机会类型" %>
-			<%= f.select :odd_type, Advisory::ODD_TYPE	%>
+			<%= collection_select(:advisory, :kind_id, Kind.all, :id, :name)%>
 		</div>
 		<div class="field">
 			<%= f.label "线索来源" %>
-			<%= f.select :stem, Advisory::STEM %>
+			<%= collection_select(:advisory, :clue_id, Clue.all, :id, :name) %>
 		</div>
 		<div class="field">
 			<%= f.label "公司名称" %>

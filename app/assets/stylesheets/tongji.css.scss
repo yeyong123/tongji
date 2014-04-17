@@ -1,5 +1,9 @@
-.table td {
+.table th, .table td {
 	padding: 5px;
+}
+hr {
+	border-top: 1px solid black;
+	border-bottom: 1px solid balck;
 }
 .header, .footer{
 	margin: auto;
@@ -291,5 +295,25 @@ tr {
 	span {
 		float: right;
 		margin: 10px 30px;
+	}
+}
+.form-form {
+	width: 30%;
+	margin: 10px auto;
+	label {
+		float: left;
+		margin-right: 10px;
+		margin-top: 3px;
+	}
+	input {
+		margin-bottom: 0;
+	}
+	.btn-primary{
+		margin: 0;
+	}
+	.btn-success {
+		margin: 10px 70px;
+		clear: both;
+		float: right;
 	}
 }

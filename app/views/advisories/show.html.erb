@@ -1,13 +1,11 @@
 <div class="user-advisory">
 	<table class="table">
 		<div class="show-current-user">
-			<%= link_to "返回", root_path, class: "btn btn-danger" %>
-			<%= link_to "新增机会", new_advisory_path, class: "btn btn-primary" %>
+			<%= link_to "返回", root_path, class: "btn btn-primary" %>
 			<br>
 			<div class="user-data">
 			<h4><%= @user.name %>添加的数据</h4>
-			<span>总共<%= @user.advisories.count %>个</span>
-			<span style="color: red;">今天新添加了<%= @user.advisories.today.count %>个</span>
+			<span>今天新添加了<%= @user.advisories.today.count %>个</span>
 		</div>
 		</div>
 		<% @advisories.order('created_at desc').each do |advi|%>
@@ -19,7 +17,7 @@
 				<% end %>
 			<% end %>
 			<tr>
-				<td colspan="12"><%= advi.content %> @<%= @user.name %></td>
+				<td colspan="12"><%= advi.content %></td>
 			</tr>
 		</tr>
 	<% end %>

@@ -16,11 +16,11 @@
 //= require_tree .
 $(document).ready(function() {
 
-	var font = $('#new_advisory #advisory_stem').find("option:selected").text();
+	var font = $('#new_advisory #advisory_clue_id').find("option:selected").text();
 		$('#new_advisory #advisory_content').val("(" + font + "): ");
 
-	$('#new_advisory #advisory_stem').change(function(){
-		var font = $('#new_advisory #advisory_stem').find("option:selected").text();
+	$('#new_advisory #advisory_clue_id').change(function(){
+		var font = $('#new_advisory #advisory_clue_id').find("option:selected").text();
 			$('#new_advisory #advisory_content').val("(" + font + "): ");
 	});
 });
