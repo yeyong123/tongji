@@ -5,6 +5,9 @@
 			<%= link_to "机会概览", root_path, class: "btn btn-primary"%>
 			<% if admin_signed_in? %>
 				<%= link_to "添加用户", new_registration_path(:user), class: "btn" %>
+				<%= link_to "增加产品分类", new_product_path, class: "btn" %>
+				<%= link_to "增加机会类型", new_kind_path, class: "btn" %>
+				<%= link_to "增加线索来源", new_clue_path, class: "btn" %>
 			<% end %>
 		<% end %>
 	</div>
