@@ -21,11 +21,11 @@
 			<%= f.text_field :time, value: Time.now.strftime("%m-%d:%H:%M"),readonly: true%>
 		</div>
 			<div class="field">
-			<%= f.label "线索来源" %>
+			<%= f.label "机会类型" %>
 			<%= collection_select(:advisory, :clue_id, Clue.all, :id, :name) %>
 		</div>
 	<div class="field">
-			<%= f.label "机会类型" %>
+			<%= f.label "线索来源" %>
 			<%= collection_select(:advisory, :kind_id, Kind.all, :id, :name)%>
 		</div>
 		<div class="field">
