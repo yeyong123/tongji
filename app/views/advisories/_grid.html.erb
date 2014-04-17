@@ -32,11 +32,19 @@
 	g.column name: "联系人", attribute: 'name' do |advi|
 		advi.name
 	end
-	g.column name: "线索来源", attribute: 'name' do |advi|
-		advi.stem
+	g.column name: "线索来源", attribute: 'name', model: Clue do |advi|
+		unless advi.clue.nil?
+			link_to advi.clue.name, clue_path(advi.clue.id)
+		else
+			advi.stem
+		end
 	end
-	g.column name: "机会类型", attribute: 'name' do |advi|
-		advi.odd_type
+	g.column name: "机会类型", attribute: 'name', model: Kind do |advi|
+		unless advi.kind.nil?
+			link_to advi.kind.name, kind_path(advi.kind.id)
+		else
+			advi.odd_type
+		end
 	end
 	g.column name: "产品类别", attribute: 'name', model: Product do |advi|
 		link_to advi.product.name, product_path(advi.product.id)

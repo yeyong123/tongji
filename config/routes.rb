@@ -11,6 +11,7 @@ Tongji::Application.routes.draw do
 	resources :clues
 	resources :kinds
 	match '/sap', to: 'advisories#advisory_sap'
+	match '/report', to: 'products#report'
 	root to: 'advisories#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -5,6 +5,9 @@ class ProductsController < ApplicationController
 		@products = Product.all
   end
 
+	def report
+	end
+
 	 def show
 		 @advisories = @product.advisories.order('created_at desc').paginate(page: params[:page], per_page: 10)
 	 end
@@ -13,6 +16,7 @@ class ProductsController < ApplicationController
   end
 
 	def edit
+
 	end
 
 	def update
@@ -31,6 +35,11 @@ class ProductsController < ApplicationController
 		else
 			render 'new'
 		end
+	end
+
+	def destroy
+		@product.destroy
+		redirect_to :back
 	end
 
 	private

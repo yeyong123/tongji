@@ -32,7 +32,7 @@ class AdvisoriesController < ApplicationController
 
 	def update
 		if @advisory.update_attributes(params[:advisory])
-			redirect_to advisory_path(@advisory)
+			redirect_to advisory_path(@user)
 		else
 			render 'edit'
 		end
