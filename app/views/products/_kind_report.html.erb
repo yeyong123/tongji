@@ -1,10 +1,10 @@
 <div class="report-product">
-	<span>当天机会类型报表</span>
+	<span>当天线索来源报表</span>
 	<% Kind.all.each do |kind| %>
 		<% unless kind.advisories.today.count == 0 %>
 			<div class="report-table product-today">
 				<div class="product-number">
-					<%= kind.advisories.today.count %>
+					<%= link_to kind.advisories.today.count, kind_path(kind.id) %>
 				</div>
 				<div class="product-name product-name2">
 					<%= kind.name %>
@@ -14,7 +14,7 @@
 	<% end %>
 </div>
 <div class="report-product">
-	<span>机会类型报表</span>
+	<span>线索来源报表</span>
 	<% Kind.all.each do |ind| %>
 		<% unless ind.advisories.count == 0 %>
 			<div class="report-table">

@@ -14,7 +14,7 @@
 			<%= render partial: "advisories/table", locals: {advi: advi} %>
 		</tr>
 			<tr>
-				<td colspan="10"><%= advi.content %> @<%= link_to advi.user.name, advisory_path(advi.user.id) %> </td>	
+				<td colspan="12"><%= advi.content %> @<%= link_to advi.user.name, advisory_path(advi.user.id) %> </td>	
 			</tr>
 		<% end %>
 	</table>

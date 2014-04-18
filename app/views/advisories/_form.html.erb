@@ -3,7 +3,7 @@
 		<% if @advisory.errors.any? %>
 			<div id="error_explanation">
 				<div class="alert alert-error">
-					有<%= @user.errors.count %>错误!
+					有<%= @advisory.errors.count %>错误!
 				</div>
 				<ul>
 					<% @advisory.errors.full_messages.each do |msg| %>
