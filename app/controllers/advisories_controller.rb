@@ -9,7 +9,8 @@ class AdvisoriesController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		@advisories = @user.advisories.order('created_at desc').paginate(page: params[:page], per_page: 10)
+		@search = @user.advisories.search(params[:search])
+		@advisories = @search.paginate(page: params[:page], per_page: 10)
 	end
 
 	def edit

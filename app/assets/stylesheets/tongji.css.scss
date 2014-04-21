@@ -1,3 +1,16 @@
+.ui-datepicker-calendar tr:nth-child(2n) td{
+	padding: 0;
+}
+input.hasDatepicker {
+	margin-bottom: 0;
+}
+.search-advisory {
+	margin: 5px;
+	padding: 5px;
+	form {
+		margin: 0;
+	}
+}
 .table th, .table td {
 	padding: 5px;
 }
