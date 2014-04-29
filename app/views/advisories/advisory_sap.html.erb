@@ -4,6 +4,7 @@
 			<div class="user-data">
 				<h4>已入库的数据</h4>
 				<span>总共<%= Advisory.where("sap=true").count %> 个</span>
+				<span>本周添加<%= Advisory.where("sap=true").past_week.count %>个</span>
 				<span>今日新加<%= Advisory.where("sap=true").today.count %>个</span>
 			</div>
 		</div>

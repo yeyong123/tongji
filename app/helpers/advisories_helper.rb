@@ -7,4 +7,8 @@ module AdvisoriesHelper
 		Advisory.by_month
 	end
 
+	def week
+		Advisory.past_week
+	end
+
 end

@@ -14,6 +14,22 @@
 	<% end %>
 </div>
 <div class="report-product">
+	<span>本周线索来源报表</span>
+	<% Kind.all.each do |ind| %>
+		<% unless ind.advisories.past_week.count == 0 %>
+			<div class="report-table product-week">
+				<div class="product-number">
+					<%= ind.advisories.past_week.count %>
+				</div>
+				<div class="product-name product-name2">
+					<%= ind.name %>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+</div>
+
+<div class="report-product">
 	<span>线索来源报表</span>
 	<% Kind.all.each do |ind| %>
 		<% unless ind.advisories.count == 0 %>

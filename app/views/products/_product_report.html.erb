@@ -14,6 +14,22 @@
 	<% end %>
 </div>
 <div class="report-product">
+	<span>本周产品咨询数</span>
+	<% Product.all.each do |product| %>
+		<% unless product.advisories.past_week.count == 0 %>
+			<div class="report-table product-week">
+				<div class="product-number">
+					<%= product.advisories.past_week.count %>
+				</div>
+				<div class="product-name">
+					<%=product.name %>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+</div>
+
+<div class="report-product">
 	<span>产品咨询数</span>
 	<% Product.all.each do |product| %>
 		<% unless product.advisories.count == 0 %>

@@ -13,6 +13,23 @@
 		<% end %>
 	<% end %>
 </div>
+
+<div class="report-product">
+	<span>本周机会类型报表</span>
+	<% Clue.all.each do |clue| %>
+		<% unless clue.advisories.past_week.count == 0 %>
+			<div class="report-table product-week">
+				<div class="product-number">
+					<%= clue.advisories.past_week.count %>
+				</div>
+				<div class="product-name product-name2">
+					<%= clue.name %>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+</div>
+
 <div class="report-product">
 	<span>机会类型报表</span>
 	<% Clue.all.each do |clue| %>

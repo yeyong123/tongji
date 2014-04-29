@@ -74,7 +74,6 @@ hr {
 		background: #fff8dc;
 		width: 20%;
 		float: right;
-		padding: 5px;
 		margin-top: 5px;
 		.count-number, .user-name {
 			text-align: center;
@@ -85,7 +84,7 @@ hr {
 			font-weight: bold;
 		}
 	}
-.zixun-tool {
+.zixun-tool, .zixun-tool2{
 	width: 90%;
 	margin: 10px auto;
 	height: 100px;
@@ -98,7 +97,6 @@ hr {
 		padding: 5px 0;
 	}
 	.user-count {
-		background: #FF7F50;
 		width: 15%;
 		margin: 5px;
 		float: left;
@@ -114,8 +112,14 @@ hr {
 			font-weight: bold;
 		}
 	}
-
 }
+	.zixun-tool2 .user-count {
+		background: #ff69b4;
+	}
+	.zixun-tool .user-count {
+		background: #FF7F50;
+	}
+
 
 //咨询机会添加
 .zixun-form {
@@ -176,7 +180,6 @@ hr {
 }
 .tool-zixun {
 	height: 275px;
-	border: 1px solid #d9d9d9;
 	margin: 5px 0;
 }
 //devise登录
@@ -227,6 +230,9 @@ hr {
 		}
 .report-table {
 	background: #ff7f50;
+}
+.report-product .product-week {
+	background: #ff69b4;
 }
 .report {
 	border: 1px solid #d9d9d9;
@@ -334,4 +340,9 @@ tr {
 		clear: both;
 		float: right;
 	}
+}
+//修改密码的css
+.edit-user {
+	width: 80%;
+	margin: auto;
 }

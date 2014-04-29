@@ -1,0 +1,18 @@
+zh-CN:
+  activerecord:
+    models: 
+      user: "用户"
+    attributes:
+      user:
+        current_password: "当前密码"
+        password: "新密码"
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: "不能为空"
+            password:
+              confirmation: "两次输入不一样"
+              too_short: "太短"  
+

@@ -2,7 +2,7 @@
 	g.after_row do |advi|
 		if advi.content != nil?
 			content_tag(:tr,
-																																													content_tag(:td, "地址：#{advi.address},备注：#{advi.content}@#{advi.user.name}", colspan: 12))
+																																													content_tag(:td, "地址：#{advi.address},备注：#{advi.content}@#{advi.user.name}", colspan: 13))
 		end
 	end
 
@@ -54,6 +54,9 @@
 	end
 	g.column do |advi|
 		render partial: 'advisories/sap', locals: {advi: advi}
+	end
+	g.column do |advi|
+		link_to "编辑", edit_advisory_path(advi)
 	end
 end %>
 

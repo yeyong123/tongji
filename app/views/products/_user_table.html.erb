@@ -21,6 +21,32 @@
 				</div>
 			</div>
 		</div>
+	<div class="zixun-tool2">
+			<span>本周数据</span>
+			<% User.all.each do |user| %>
+				<div class="user-count">
+					<% unless user.advisories.past_week.count == 0 %>
+					<div class="user-count-one">
+						<%= user.advisories.past_week.count %>
+					</div>
+					<div class="user-name">
+						<%= user.name %>
+					</div>
+				<% end %>
+				</div>
+			<% end %>
+			<div class="count">
+				<div class="count-number">
+					<%= Advisory.past_week.count %>
+				</div>
+				<div class="user-name">
+					合计
+				</div>
+			</div>
+		</div>
+
+
+
 		<div class="zixun-tool">
 			<span>本月数据</span>
 			<% User.all.each do |user| %>
