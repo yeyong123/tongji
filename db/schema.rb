@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140417010505) do
+ActiveRecord::Schema.define(:version => 20140429050348) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20140417010505) do
     t.boolean  "sap",         :default => false
     t.integer  "clue_id"
     t.integer  "kind_id"
+    t.integer  "quantity",    :default => 0
   end
 
   create_table "cities", :force => true do |t|
@@ -98,6 +99,13 @@ ActiveRecord::Schema.define(:version => 20140417010505) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "province_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "products", :force => true do |t|

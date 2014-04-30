@@ -4,6 +4,7 @@
 			<%= link_to "报表", report_path, class: "btn btn-success"%>
 			<%= link_to "机会概览", root_path, class: "btn btn-primary"%>
 			<%= link_to "已入库的数据", sap_path, class: "btn btn-info" %>
+			<%= link_to "咨询地区与产品分析", relation_path, class: "btn btn-danger" %>
 			<% if admin_signed_in? %>
 				<%= link_to "添加用户", new_registration_path(:user), class: "btn" %>
 				<%= link_to "增加产品分类", new_product_path, class: "btn" %>

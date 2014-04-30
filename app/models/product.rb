@@ -1,8 +1,11 @@
 class Product < ActiveRecord::Base
   attr_accessible :name
 	has_many :advisories
+	has_many :line_items
+	has_many :provinces, through: :advisories
 
 	before_destroy :referenced_by_any_advisory
+
 
 	private 
 		

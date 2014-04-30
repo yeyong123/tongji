@@ -1,0 +1,16 @@
+		<% @provinces.each do |province| %>
+<ul class="relation-product">
+	<li>
+	<h4><%= province.name %>:
+		<%= province.advisories.count %></h4>
+			<ul>
+				<% Hash[province.products.map(&:name).group_by{|v| v}.map{|k,v| [k, v.size]}].each do |k, v|%>
+					<li>		
+					<span><%= k %> :</span>
+					<b><%= v %></b>
+					</li>
+				<% end %>
+			</ul>
+			</li>
+	</ul>
+<% end %>

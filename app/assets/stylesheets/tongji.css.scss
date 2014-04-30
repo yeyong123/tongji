@@ -346,3 +346,17 @@ tr {
 	width: 80%;
 	margin: auto;
 }
+//咨询地区与产品关联
+.relation-product {
+	list-style: none;
+	width: 20%;
+	float: left;
+	ul {
+		list-style: none;
+		border: 1px solid #d9d9d9;
+		margin-left: 0;
+		span {
+			font-size: 14px;
+		}
+	}
+}

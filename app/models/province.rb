@@ -6,4 +6,8 @@ class Province < ActiveRecord::Base
   has_many :cities, dependent: :destroy
   has_many :districts, through: :cities
 	has_many :advisories
+	has_many :products, through: :advisories
+	has_many :line_items
+
+
 end

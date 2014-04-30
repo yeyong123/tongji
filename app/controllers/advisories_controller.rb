@@ -25,6 +25,7 @@ class AdvisoriesController < ApplicationController
 		@user = current_user
 		@advisory = @user.advisories.new(params[:advisory])
 		if @advisory.save
+			@advisory.increment!(:quantity)
 			redirect_to root_path
 		else
 			render 'new'
@@ -50,6 +51,10 @@ class AdvisoriesController < ApplicationController
 		redirect_to root_path
 	end
 
+
+	def get_item
+		@provinces = Province.all
+	end
 
 	private
 
