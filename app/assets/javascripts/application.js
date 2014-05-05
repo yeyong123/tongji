@@ -24,6 +24,6 @@ $(document).ready(function() {
 			$('#new_advisory #advisory_content').val("(" + font + "): ");
 	});
 
-	$('.edit_advisory .btn-success').val("未入库").parent().parent().parent().addClass('get-color');
+	$('.table-striped .edit_advisory .btn-success').val("未入库").parent().parent().parent().addClass('get-color');
 
 });
