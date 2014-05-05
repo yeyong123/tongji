@@ -23,4 +23,7 @@ $(document).ready(function() {
 		var font = $('#new_advisory #advisory_kind_id').find("option:selected").text();
 			$('#new_advisory #advisory_content').val("(" + font + "): ");
 	});
+
+	$('.edit_advisory .btn-success').val("未入库").parent().parent().parent().addClass('get-color');
+
 });
