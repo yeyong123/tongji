@@ -1,5 +1,13 @@
 <div class="zixun-index">
 	<%= link_to "新增机会",new_advisory_path, class: "btn btn-primary" %>
+	<div class="search-advisory">
+	<%= form_for @search, :url => advisories_path, html: {method: :get} do |f| %>
+		<%= f.text_field :created_at_greater_than_or_equal_to, id: "datapick" %>
+		--
+		<%= f.text_field :created_at_less_than_or_equal_to, id: "datapick" %>
+		<%= f.submit "按时间检索", class: 'btn btn-warning' %>
+	<% end %>
+</div>
 	<%= render 'grid' %>
 </div>
 <script>

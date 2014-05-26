@@ -5,6 +5,8 @@ class AdvisoriesController < ApplicationController
 	def index
 		@tasks_grid = initialize_grid(Advisory, include: [:product, :province, :user, :clue, :kind], order: 'advisories.created_at', order_direction: 'desc',
 			per_page:15)
+
+	 @search = Advisory.search
 	end
 
 	def show
