@@ -1,9 +1,11 @@
 Tongji::Application.routes.draw do
 	
 
-  devise_for :admins
-
-  devise_for :users
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  
+	devise_for :users
+  #ActiveAdmin.routes(self)
 
 	resources :advisories
 	resources :products

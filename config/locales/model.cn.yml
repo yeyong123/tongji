@@ -1,0 +1,21 @@
+zh-CN:
+  activerecord:
+     models:
+       advisory: "机会"
+       kind: "线索来源"
+       clue: "机会类型"
+       admin_user: "管理员"
+       product: "产品"
+       provice: "地区"
+     attributes:
+       advisory:
+         company: "公司"
+         name: "姓名"
+         telphone: "电话"
+         fax: "传真"
+         mobel_phone: "手机"
+         email: "邮箱"
+         address: "地址"
+         content: "咨询内容"
+         
+

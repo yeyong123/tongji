@@ -6,8 +6,10 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'kaminari'
 gem 'wice_grid'
 gem 'devise'
+gem 'activeadmin'
 gem 'will_paginate'
 gem 'nested_form'
 gem 'bootstrap-sass'
@@ -16,6 +18,7 @@ gem 'china_region_fu'
 gem 'by_star', '~> 2.2.0'
 gem 'chronic'
 gem 'unicorn'
+gem 'jquery-ui-rails'
 gem 'meta_search','1.1.3'
 	# Gems used only for assets and not required
 # in production environments by default.
@@ -29,7 +32,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '< 3.0.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

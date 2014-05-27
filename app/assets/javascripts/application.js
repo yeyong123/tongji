@@ -26,4 +26,15 @@ $(document).ready(function() {
 
 	$('.table-striped .edit_advisory .btn-success').val("未入库").parent().parent().parent().addClass('get-color');
 
+	$('#datapick, #datepick').datepicker({
+			dateFormat: 'yy/mm/dd',
+			clearText: '清楚',
+			closeText: '关闭',
+			prevText: '前一个月',
+			nextText: '后一个月',
+			currentText: '今天',
+			monthNames: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+			dayNames: ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'],
+		});
+
 });

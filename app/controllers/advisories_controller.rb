@@ -3,16 +3,15 @@ class AdvisoriesController < ApplicationController
 	before_filter :find_id, only: [:edit, :update,:destroy]
 
 	def index
-		@tasks_grid = initialize_grid(Advisory, include: [:product, :province, :user, :clue, :kind], order: 'advisories.created_at', order_direction: 'desc',
-			per_page:15)
+	 @search = Advisory.search(params[:search])
+	@tasks_grid = initialize_grid(Advisory, include: [:product, :province, :user, :clue, :kind], order: 'advisories.created_at', order_direction: 'desc', :page =>15)
 
-	 @search = Advisory.search
 	end
 
 	def show
 		@user = User.find(params[:id])
 		@search = @user.advisories.search(params[:search])
-		@advisories = @search.paginate(page: params[:page], per_page: 10)
+		@advisories = @search.paginate(page: params[:page], :page => 10)
 	end
 
 	def edit
@@ -55,7 +54,9 @@ class AdvisoriesController < ApplicationController
 
 
 	def get_item
-		@provinces = Province.all
+		@search = Advisory.search(params[:search])
+		@advisories = @search.all
+
 	end
 
 	private

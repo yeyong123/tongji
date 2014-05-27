@@ -1,4 +1,23 @@
-		<% @provinces.each do |province| %>
+<div class="advi-table">
+<% Kind.all.each do |kind| %>
+	<ul class="relation-product">
+	<li>
+	<h4><%= kind.name %>: <%= kind.advisories.count %></h4>
+	<ul>
+		<% Hash[kind.clues.map(&:name).group_by{|v| v}.map{|k, v| [k, v.size]}].each do |k,v| %>
+			<li>
+		<span><%= k %></span>
+		<b><%= v %></b>
+		</li>
+	<% end %>
+	</ul>
+	</li>
+</ul>
+<% end %>
+</div>
+
+<div class="other-relation">
+<% Province.all.each do |province| %>
 <ul class="relation-product">
 	<li>
 	<h4><%= province.name %>:
@@ -14,3 +33,4 @@
 			</li>
 	</ul>
 <% end %>
+</div>
