@@ -1,0 +1,88 @@
+<div class="get-advisories">
+<table class="table">
+	<div class="search-advi">
+		<%= form_for @search, url: relation_path, html: { method: :get} do |f| %>
+			<div class="date-field field">
+			<%= f.label "时间:" %>
+			<%= f.text_field :created_at_greater_than_or_equal_to, id: "datepick" %>
+		--
+		<%= f.text_field :created_at_less_than_or_equal_to, id: 'datapick' %>
+	</div>
+	<div class="advi-name-field field">
+		<%= f.label "联系人:" %>
+		<%= f.text_field :name_contains %>
+	</div>
+	<div class="kind-name-field field">
+		<%= f.label "机会类型:" %>
+		<%= f.text_field :kind_name_contains %>
+	</div>
+	<div class="clue-name-field field">
+		<%= f.label "线索来源:" %>
+		<%= f.text_field :clue_name_contains %>
+	</div>
+	<div class="product-field field">
+		<%= f.label "产品类型:"%>
+		<%= f.text_field :product_name_contains %>
+	</div>
+	<div class="province-field field">
+		<%= f.label "地区" %>
+		<%= f.text_field :province_name_contains %>
+	</div>
+	<div class="phone-field field">
+		<%= f.label "手机:"%>
+		<%= f.text_field :mobel_phone_contains %>
+	</div>
+	<div class="action">
+		<%= f.submit "检索", class: "btn btn-info" %>
+		<%= link_to "重置", relation_path, class: "btn btn-danger" %>
+	</div>
+	<% end %>
+	</div>
+	<div class="advi-number" %>
+	<span class="current_page">
+		当前页面有: <%= @advisories.length %> 个机会
+	</span>
+	<span>
+	共有：<%= @search.count %>个机会
+</span>
+</div>
+	<tr>
+		<td>日期</td>
+		<td>公司名称</td>
+		<td>电话</td>
+		<td>传真</td>
+		<td>手机</td>
+		<td>邮箱</td>
+		<td>地区</td>
+		<td>联系人</td>
+		<td>机会类型</td>
+		<td>线索来源</td>
+		<td>产品类型</td>
+		<td>是否入库</td>
+		<td>操作</td>
+		</tr>
+	<% @advisories.order("created_at desc").each do |advi|%>
+		<tr>
+		<td><%= advi.time %></td>
+		<td><%= advi.company%></td>
+		<td><%= advi.telphone %></td>
+		<td><%= advi.fax %></td>
+		<td><%= advi.mobel_phone %></td>
+		<td><%= advi.email %></td>
+		<td><%= advi.province.name %></td>
+		<td><%= advi.name %></td>
+		<td><%= advi.clue.name %></td>
+		<td><%= advi.kind.name %></td>
+		<td><%= advi.product.name %></td>
+		<td><%= render partial: 'advisories/sap', locals: {advi: advi} %></td>
+		<td><%= link_to "编辑", edit_advisory_path(advi) %></td>
+	</tr>
+	<td colspan="13">
+		备注：
+		<%= advi.content %>
+		@<%= advi.user.name %>
+	</td>
+	<% end %>
+</table>
+<%= will_paginate @advisories %>
+</div>

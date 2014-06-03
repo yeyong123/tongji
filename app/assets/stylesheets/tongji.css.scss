@@ -73,7 +73,7 @@ hr {
 	.user-count {
 		background: #ff6968;
 		width: 15%;
-		margin: 5px;
+		margin-left: 5px;
 		float: left;
 		.user-count-one,.user-name {
 			text-align: center;
@@ -116,7 +116,7 @@ hr {
 	}
 	.user-count {
 		width: 15%;
-		margin: 5px;
+		margin-left: 5px;
 		float: left;
 		.user-count-one {
 			font-size: 22px;
@@ -183,8 +183,6 @@ hr {
 	font-size: 10px;
 }
 .zixun-index {
-	width: 98%;
-	margin: auto;
 }
 .zixun-index form {
 	margin: 0;
@@ -287,6 +285,13 @@ hr {
 		}
 	}
 }
+.get-advisories .table td, .get-advisories .table th {
+	vertical-align: middle;
+	form {
+		margin: 0;
+	}
+}
+.get-advi
 .product-name {
 	font-size: 16px;
 	color: black;
@@ -312,7 +317,6 @@ tr {
 tr:nth-child(2n){
 	background: #d9d9d9;
 	td {
-		padding: 10px;
 	}
 }
 tr {
@@ -378,3 +382,81 @@ tr {
 		}
 	}
 }
+.relation-table {
+	margin: auto;
+	width: 80%;
+	height: 300px;
+	ul {
+		list-style: none;
+		margin: 0;
+		li {
+			padding: 3px 0;
+		}
+	}
+	.kind-table {
+		margin: 0;
+		width: 100%;
+	.clue-kind {
+		width: 118px;
+	}
+		li {
+			float: left;
+			width: 107px;
+			text-align: center;
+			border: 1px solid;
+		}
+		.kind-name {
+		}
+	}
+	.kind-clue {
+		clear: both;}
+	.clue-table {
+		width: 109px;
+		float: left;
+		li {
+			border: 1px solid;
+			text-align: center;
+		}
+	}
+	.column-table {
+		float: left;
+		width: 120px;
+		li {
+			text-align: center;
+			border: 1px solid;
+		}
+	}
+}
+.get-advisories {
+	width: 99%;
+	margin: auto;
+}
+.search-advi {
+	clear: both;
+	float: left;
+	width: 100%;
+	border: 1px solid #d9d9d9;
+	background: #e8e8e8;
+	.field {
+		float: left;
+		margin-right: 5px;
+	}
+	.action {
+		clear: both;
+	}
+	input {
+		width: 120px;
+	}
+}
+.advi-number {
+	border: 1px solid;
+	width: 100%;
+	float: left;
+	padding: 5px;
+	margin: 5px 0;
+	background: #ff6968;
+	span {
+		padding: 15px;
+	}
+}
+

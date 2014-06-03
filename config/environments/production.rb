@@ -38,7 +38,7 @@ Tongji::Application.configure do
 
   # Use a different logger for distributed setups
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
-	config.logger = Logger.new(config.paths["logs"].firsts, 'daily')
+	config.logger = Logger.new(config.paths["log"].first, 'daily')
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
@@ -47,7 +47,7 @@ Tongji::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w(application.js, application.css )
+  config.assets.precompile += ['application.js', 'bootstrap.min.css', 'tongji.css', 'wice_grid.css']
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false

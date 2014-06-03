@@ -3,15 +3,14 @@ class AdvisoriesController < ApplicationController
 	before_filter :find_id, only: [:edit, :update,:destroy]
 
 	def index
-	 @search = Advisory.search(params[:search])
-	@tasks_grid = initialize_grid(Advisory, include: [:product, :province, :user, :clue, :kind], order: 'advisories.created_at', order_direction: 'desc', :page =>15)
-
-	end
+	@search = Advisory.search(params[:search])
+		@advisories = @search.paginate(page: params[:page], per_page: 10)
+		end
 
 	def show
 		@user = User.find(params[:id])
 		@search = @user.advisories.search(params[:search])
-		@advisories = @search.paginate(page: params[:page], :page => 10)
+		@advisories = @search.paginate(page: params[:page])
 	end
 
 	def edit
@@ -55,9 +54,8 @@ class AdvisoriesController < ApplicationController
 
 	def get_item
 		@search = Advisory.search(params[:search])
-		@advisories = @search.all
-
-	end
+		@advisories = @search.paginate(page: params[:page], per_page: 10)
+		end
 
 	private
 
@@ -70,4 +68,5 @@ class AdvisoriesController < ApplicationController
 			redirect_to root_path, notice: "只能操作自己的数据"
 		end
 	end
+
 end

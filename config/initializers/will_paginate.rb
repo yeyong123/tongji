@@ -9,9 +9,10 @@ if defined?(WillPaginate)
 	end
 end
 module ActiveRecord
-	class Relation
-		alias_method :total_count, :count
-		alias_method :last_page?, :empty? 
-	end
+  class Relation
+    alias_method :total_count, :count
+  end
 end
+
+
 

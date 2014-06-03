@@ -1,0 +1,30 @@
+
+<ul class="kind-table">
+<li class="clue-kind">机会与线索报表</li>
+<% Kind.all.each do |kind| %>
+	<li class="kind-name">	<%=  kind.name %> </li>
+<% end %>
+<li>机会类型合计</li>
+</ul>
+<div class="kind-clue">
+<ul class="column-table">
+	<% Clue.all.each do |clue| %>
+		<li><%= clue.name %></li>
+<% end %>
+	<li>线索来源总计</li>
+</ul>
+<% Kind.all.each do |kind| %>
+	<ul class="clue-table">
+	<% Clue.all.each do |clue| %>
+		<li><%= kind.advisories.past_week.joins(:clue).where(:clue_id => clue.id).count %></li>
+<% end %>
+	<li><%= kind.advisories.past_week.count %></li>
+</ul>
+<% end %>
+<ul class="clue-table">
+	<% Clue.all.each do |clue| %>
+		<li><%= clue.advisories.past_week.count %></li>
+<% end %>
+	<li><%= Advisory.past_week.count %></li>
+</ul>
+</div>
