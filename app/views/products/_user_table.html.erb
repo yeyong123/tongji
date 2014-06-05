@@ -48,7 +48,7 @@
 
 
 		<div class="zixun-tool">
-			<span>本月数据</span>
+			<span>全部数据</span>
 			<% User.all.each do |user| %>
 				<div class="user-count">
 					<% unless user.advisories.count == 0 %>
@@ -63,7 +63,7 @@
 			<% end %>
 			<div class="count">
 				<div class="count-number">
-					<%= yester_day.count %>
+					<%= Advisory.count %>
 				</div>
 				<div class="user-name">
 					合计

@@ -1,34 +1,28 @@
-<div class="relation-table">
 	<ul class="nav nav-tabs" id="myTab">
 		<li class="active"><a href="#today" data-toggle="tab">今天</a></li>
-		<li><a href="#yesterday" data-toggle="tab">昨天</a></li>
 		<li><a href="#week" data-toggle="tab">本周</a></li>
-		<li><a href="#last_week" data-toggle="tab">上一周</a></li>
 		<li><a href="#month" data-toggle="tab">本月</a></li>
-		<li><a href="#last_month" data-toggle="tab">上月</a></li>
 		<li><a href="#all" data-toggle="tab">全部</a></li>
 	</ul>
 	<div class="tab-content" id="myTabContent">
 		<div class="tab-pane active in" id="today">
-			<%= render 'advisories/today' %>
+			<%= render 'advisories/product_today' %>
 		</div>
-		<div class="tab-pane" id="yesterday">
-			<%= render 'advisories/yesterday' %>
-		</div>
-		<div class="tab-pane" id="week">
-			<%= render 'week' %>
-		</div>
-		<div class="tab-pane" id="last_week">
-			<%= render 'last_week' %>
+			<div class="tab-pane" id="week">
+			<%= render 'advisories/product_week' %>
 		</div>
 		<div class="tab-pane" id="month">
-			<%= render 'month' %>
-		</div>
-		<div class="tab-pane" id="last_month">
-			<%= render 'last_month' %>
+			<%= render 'advisories/product_month' %>
 		</div>
 		<div class="tab-pane" id="all">
-			<%= render 'all' %>
+			<%= render 'advisories/product_all' %>
 		</div>
-	</div>
 </div>
+<script>
+$(document).ready(function(){
+		var get = $('.clue-table li').val();
+		if (get < 1 ) {
+		$('.clue-table li').addClass('myname');
+		}	
+		});
+</script>

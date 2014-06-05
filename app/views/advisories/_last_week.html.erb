@@ -16,7 +16,7 @@
 <% Kind.all.each do |kind| %>
 	<ul class="clue-table">
 	<% Clue.all.each do |clue| %>
-		<li><%= kind.advisories.past_week.joins(:clue).where(:clue_id => clue.id).count %></li>
+		<li><%= Advisory.past_week.where("kind_id = ? and clue_id = ?", kind, clue).count %></li>
 <% end %>
 	<li><%= kind.advisories.past_week.count %></li>
 </ul>

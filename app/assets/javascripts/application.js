@@ -24,7 +24,7 @@ $(document).ready(function() {
 			$('#new_advisory #advisory_content').val("(" + font + "): ");
 	});
 
-	$('.table-striped .edit_advisory .btn-success').val("未入库").parent().parent().parent().addClass('get-color');
+	$('.get-advisories .edit_advisory .btn-success').val("未入库").parent().parent().parent().addClass('get-color');
 
 	$('#datapick, #datepick').datepicker({
 			dateFormat: 'yy/mm/dd',

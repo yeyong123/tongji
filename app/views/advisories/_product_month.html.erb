@@ -1,0 +1,33 @@
+<div class="relation-table2">
+<ul class="kind-table">
+	<li class="clue-kind">地区与产品</li>
+	<% Product.all.each do |kind| %>
+		<li class="kind-name">	<%=  truncate kind.name, length: 7%> </li>
+<% end %>
+	<li>地区合计</li>
+</ul>
+<div class="kind-clue">
+	<ul class="column-table">
+		<% Province.all.each do |clue| %>
+			<li><span><%= truncate clue.name, length: 5 %></span></li>
+	<% end %>
+		<li>产品总计</li>
+	</ul>
+	<% Product.all.each do |kind| %>
+		<ul class="clue-table">
+		<% Province.all.each do |clue| %>
+			<li>	<%=Advisory.by_month.where("product_id = ? and province_id = ?", kind, clue).count%>
+			</li>
+	<% end %>
+	<li><%= kind.advisories.by_month.count %></li>
+	</ul>
+<% end %>
+	<ul class="clue-table">
+		<% Province.all.each do |clue| %>
+			<li><%= clue.advisories.by_month.count %></li>
+	<% end %>
+		<li><%= Advisory.by_month.count %></li>
+	</ul>
+</div>
+</div>
+
