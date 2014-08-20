@@ -1,7 +1,7 @@
 <div class="get-advisories">
 <table class="table">
 	<div class="search-advi">
-		<%= form_for @search, url: relation_path, html: { method: :get} do |f| %>
+		<%= form_for @search, url: root_path, html: { method: :get} do |f| %>
 			<div class="date-field field">
 			<%= f.label "时间:" %>
 			<%= f.text_field :created_at_greater_than_or_equal_to, id: "datepick" %>
@@ -32,9 +32,13 @@
 		<%= f.label "手机:"%>
 		<%= f.text_field :mobel_phone_contains %>
 	</div>
+	<div class="phone-field field">
+		<%= f.label "电话:" %>
+		<%= f.text_field :telphone_contains %>
+		</div>
 	<div class="action">
 		<%= f.submit "检索", class: "btn btn-info" %>
-		<%= link_to "重置", relation_path, class: "btn btn-danger" %>
+		<%= link_to "重置", root_path, class: "btn btn-danger" %>
 	</div>
 	<% end %>
 	</div>

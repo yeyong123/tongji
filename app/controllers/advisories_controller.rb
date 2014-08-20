@@ -53,9 +53,12 @@ class AdvisoriesController < ApplicationController
 
 
 	def get_item
-		@search = Advisory.search(params[:search])
-		@advisories = @search.paginate(page: params[:page], per_page: 10)
+		if params[:date]	
+			@kinds = Advisory.includes(:kind).where("created_at >= ?",params[:date])
+		else
+			@kinds = Kind.includes(:advisories)
 		end
+	end
 
 	private
 
