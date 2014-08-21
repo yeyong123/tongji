@@ -1,4 +1,28 @@
-<%= link_to "today", relation_path(date: Time.now - 30.days) %>
-<% @kinds.each do |advi| %>
-		<%= advi.created_at %>
-<% end %>
+<ul class="nav nav-tabs" id="myTab">
+		<li class="active"><a href="#today" data-toggle="tab">今天</a></li>
+		<li><a href="#week" data-toggle="tab">本周</a></li>
+		<li><a href="#month" data-toggle="tab">本月</a></li>
+		<li><a href="#all" data-toggle="tab">全部</a></li>
+	</ul>
+	<div class="tab-content" id="myTabContent">
+		<div class="tab-pane active in" id="today">
+			<%= render 'advisories/product_today' %>
+		</div>
+			<div class="tab-pane" id="week">
+			<%= render 'advisories/product_week' %>
+		</div>
+		<div class="tab-pane" id="month">
+			<%= render 'advisories/product_month' %>
+		</div>
+		<div class="tab-pane" id="all">
+			<%= render 'advisories/product_all' %>
+		</div>
+</div>
+<script>
+$(document).ready(function(){
+		var get = $('.clue-table li').val();
+		if (get < 1 ) {
+		$('.clue-table li').addClass('myname');
+		}	
+		});
+</script>
